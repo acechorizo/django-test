@@ -24,17 +24,17 @@ class CreativeTemplate(models.Model):
     name = models.CharField(max_length=64)
     template = models.TextField()
     status = models.CharField(max_length=1)
-    sizes = models.ManyToManyField(CreativeSize, through='CreativeSizeTemplateRel')
+    sizes = models.ManyToManyField(CreativeSize, through='CreativeSizeTemplateRel', related_name='templates')
 
     class Meta:
         db_table = 'CreativeTemplate'
 
     def __unicode__(self):
-        return (self.name, self.creativeTemplateId)
+        return (self.name)
 
 class CreativeSizeTemplateRel(models.Model):
-    creativeSizeId = models.ForeignKey(CreativeSize, db_column='creativeSizeId', related_name='templates')
-    creativeTemplateId = models.ForeignKey(CreativeTemplate, db_column='creativeTemplateId', related_name='cs_sizes')
+    creativeSizeId = models.ForeignKey(CreativeSize, db_column='creativeSizeId')
+    creativeTemplateId = models.ForeignKey(CreativeTemplate, db_column='creativeTemplateId')
 
     class Meta:
         db_table = 'CreativeSizeTemplateRel'

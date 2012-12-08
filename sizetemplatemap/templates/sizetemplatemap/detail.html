@@ -1,0 +1,18 @@
+<html><body>
+
+<ul>
+<li>ID: {{ creative_size_obj.creativeSizeId }}</li>
+<li>NAME: {{ creative_size_obj.name }}</li>
+<li>WIDTH: {{ creative_size_obj.width }}</li>
+<li>HEIGHT: {{ creative_size_obj.height }}</li>
+</ul>
+
+
+<ul>
+{% for t in creative_size_obj.templates.all %}
+    <li>{{ t.creativeTemplateId }} : {{ t.name }}</li>
+{% endfor %}
+</ul>
+
+
+</body></html>

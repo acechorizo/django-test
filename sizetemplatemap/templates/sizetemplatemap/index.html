@@ -1,0 +1,9 @@
+{% if creative_size_list %}
+    <ul>
+    {% for cs in creative_size_list %}
+        <li><a href="/sizetemplatemap/{{ cs.creativeSizeId }}/">{{ cs.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No creative sizes are available.</p>
+{% endif %}
