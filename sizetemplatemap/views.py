@@ -14,8 +14,6 @@ def index(request):
 
 def detail(request, creative_size_id):
     creative_size = get_object_or_404(CreativeSize, pk=creative_size_id)
-    #creative_templates = creative_size.CreativeSizeTemplateRel_set.all()
-
     return render(request, 'sizetemplatemap/detail.html', {'creative_size_obj': creative_size})
 
 def custom_404(request):

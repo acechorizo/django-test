@@ -10,10 +10,11 @@ ADMINS = (
 MANAGERS = ADMINS
 
 # windows path 'NAME': 'C:/Users/amyc/django-tools/tools/tools_sqlite.db',
+# mac path /Users/amy/working/tools/data/tools_sqlite.db
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/amy/working/tools/data/tools_sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'C:/Users/amyc/Documents/GitHub/django-test/tools_sqlite.db', # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
