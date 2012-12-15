@@ -1,5 +1,14 @@
 <html><body>
 
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'creative_size_edit' creative_size_obj.creativeSizeId %}" method="post">
+{% csrf_token %}
+<input type="text" name="cs_name" id="cs_name" value="{{ creative_size_obj.name ? creative_size_obj.name : '' }}" />
+<label for="cs_name">Creative Size Name</label><br />
+<input type="submit" value="Submit" />
+</form>
+
 <ul>
 <li>ID: {{ creative_size_obj.creativeSizeId }}</li>
 <li>NAME: {{ creative_size_obj.name }}</li>
